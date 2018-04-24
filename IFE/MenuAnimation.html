@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>No.1 - 制作一个简单的菜单动画效果</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<body>
+    <div id="page">
+        <div id="text">Hello World<p id="border" class="border border-all"></p></div> 
+        <input id="changeStyle" type="button" value="切换样式">
+    </div>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #page { 
+        color: #999;
+        font-size: 2rem;
+        text-align: center;
+        margin: auto;
+    }
+
+    .text {
+        color: #888;
+        transition: color 1s;
+    }
+    
+    .border {
+        transform: scaleX(0);
+    }
+
+    .text-change {
+        color: red;
+        transition: color 1s;
+    }
+
+    .border-all {
+        width: 200px;
+        border-bottom: 3px solid red;
+        transition: transform 1s;
+        transform-origin: 50% 0;
+        margin: auto
+    }
+
+    .border-show {
+        transform: scale(1);
+    }
+</style>
+</body>
+</html>
+<script type="text/javascript">
+    let button = document.getElementById("changeStyle");
+    let text = document.getElementById("text");
+    let border = document.getElementById("border")
+    window.onload = () => {
+        button.onclick = () =>  {
+            let textChange = text.classList.contains("text-change");
+            // if (!textChange) {
+            //     text.classList.add("text-change");
+            //     border.classList.add("border-show");
+            //     // text.classList = "text-change";
+            //     // border.classList = "border-show";
+            // }
+            // if (textChange) {
+            //     text.classList.remove("text-change");
+            //     border.classList.remove("border-show");
+            //     // text.classList = "";
+            //     // border.classList = "border";
+            // }
+            function texT () {
+                text.classList.remove("text-change");
+                border.classList.remove("border-show");
+            }
+
+            function texF () {
+                text.classList.add("text-change");
+                border.classList.add("border-show");
+            }
+            textChange ? texT() : texF()
+            // let timer = null
+            // if (timer) {
+            //     clearTimeout(timer);
+            // } 
+            // timer = setTimeout(() => {
+            //     text.classList.remove = "text-change";
+            //     border.classList.remove = "border-show";
+            // }, 1000);
+        }
+    }
+</script>
