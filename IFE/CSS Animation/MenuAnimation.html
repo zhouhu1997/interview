@@ -23,18 +23,25 @@
         margin: auto;
     }
 
+    /* 文本初始样式 */
     .text {
         color: #888;
         transition: color 1s;
     }
     
+    /* 文本变化样式 */
+    .text-change {
+        color: red;
+        transition: color 1s;
+    }
+
+    /* 下划线初始样式 */
     .border {
         transform: scaleX(0);
     }
 
-    .text-change {
-        color: red;
-        transition: color 1s;
+    .border-show {
+        transform: scale(1);
     }
 
     .border-all {
@@ -43,10 +50,6 @@
         transition: transform 1s;
         transform-origin: 50% 0;
         margin: auto
-    }
-
-    .border-show {
-        transform: scale(1);
     }
 </style>
 </body>
@@ -61,6 +64,8 @@
             // if (!textChange) {
             //     text.classList.add("text-change");
             //     border.classList.add("border-show");
+            // 以下 2 行存在疑问
+            // 根据 W3C 和 菜鸟教程 classList属性应为只读， 但是在此处 可写， 也即是 此处与以上代码 起到一样 的效果， 具体原因暂时不知。
             //     // text.classList = "text-change";
             //     // border.classList = "border-show";
             // }
@@ -79,6 +84,7 @@
                 text.classList.add("text-change");
                 border.classList.add("border-show");
             }
+            
             textChange ? texT() : texF()
             // let timer = null
             // if (timer) {
