@@ -5,6 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>第二天：给自己做一个在线简历吧</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #999;
+        }
+
+        #resume {
+            margin: auto;
+            width: 600px;
+            border: 2px solid #555;
+            margin-top: 5rem;
+        }
+
+        .title {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        .top {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        .top-img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 1.5333rem;
+            border-radius: 33%;
+        }
+
+        .top-content {
+            display: inline-block;
+            flex: 1;
+            align-items: top;
+            margin: 1.5333rem;
+        }
+
+        .top-content-li {
+            font-size: 1.533rem;
+            color: #777;
+        }
+
+        .top-content-li > span {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #777;
+        }
+
+        .name:hover {
+            color: red;
+        }
+
+        .middle {
+            margin: 1.5333rem;
+        }
+
+        .middle-content-li {
+            display: inline-block;
+            margin: 1rem 1rem 0 0;
+        }
+
+        .icon {
+            border: 2px solid #ee9977;
+            padding: .2rem;
+            border-radius: 50%;
+        }
+
+        .footer {
+            margin: 1.5333rem; 
+        }
+
+        .footer-title,
+        .middle-title,
+        .top-title {
+            font-size: 2rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #888;
+        }
+
+        .top-title {
+            margin: 1.533rem;
+        }
+
+        .footer-content-li {
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem .25rem;
+            color: #999;
+            font-weight: 300;
+            background-color: rgba(7, 17, 27, 0.1);
+        }
+        
+        .footer-content-li > span {
+            display: block;
+        }
+
+        .footer-content-realization > li,
+        .footer-content-li > span {
+            padding: .2rem 0;
+            text-align: left;
+            text-indent: 1rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <div id="resume">
