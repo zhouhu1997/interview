@@ -4,54 +4,54 @@
     <meta charset="UTF-8">
     <title>No.1 - 制作一个简单的菜单动画效果</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #page { 
+            color: #999;
+            font-size: 2rem;
+            text-align: center;
+            margin: auto;
+        }
+
+        /* 文本初始样式 */
+        .text {
+            color: #888;
+            transition: color 1s;
+        }
+        
+        /* 文本变化样式 */
+        .text-change {
+            color: red;
+            transition: color 1s;
+        }
+
+        /* 下划线初始样式 */
+        .border {
+            transform: scaleX(0);
+        }
+
+        .border-show {
+            transform: scale(1);
+        }
+
+        .border-all {
+            width: 200px;
+            border-bottom: 3px solid red;
+            transition: transform 1s;
+            transform-origin: 50% 0;
+            margin: auto
+        }
+    </style>
 </head>
 <body>
     <div id="page">
         <div id="text">Hello World<p id="border" class="border border-all"></p></div> 
         <input id="changeStyle" type="button" value="切换样式">
     </div>
-<style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    #page { 
-        color: #999;
-        font-size: 2rem;
-        text-align: center;
-        margin: auto;
-    }
-
-    /* 文本初始样式 */
-    .text {
-        color: #888;
-        transition: color 1s;
-    }
-    
-    /* 文本变化样式 */
-    .text-change {
-        color: red;
-        transition: color 1s;
-    }
-
-    /* 下划线初始样式 */
-    .border {
-        transform: scaleX(0);
-    }
-
-    .border-show {
-        transform: scale(1);
-    }
-
-    .border-all {
-        width: 200px;
-        border-bottom: 3px solid red;
-        transition: transform 1s;
-        transform-origin: 50% 0;
-        margin: auto
-    }
-</style>
 </body>
 </html>
 <script type="text/javascript">
