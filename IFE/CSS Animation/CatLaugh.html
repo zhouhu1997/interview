@@ -245,6 +245,23 @@
             opacity: 1.0;
             transition: all .5s;
         }
+
+        .ear-wrap .left{
+            transition: all .5s;
+        }
+
+        .ear-wrap .right{
+            transition: all .5s;
+        }
+
+        .face:hover~.ear-wrap .left{
+            transform: rotate(-30deg);
+            transition: all .5s;
+        }
+        .face:hover~.ear-wrap .right{
+            transform: rotate(30deg);
+            transition: all .5s; 
+        }
     </style>
 </head>
 
