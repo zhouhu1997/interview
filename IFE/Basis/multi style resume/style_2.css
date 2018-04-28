@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#resume {
+    width: 900px;
+    height: 100%;
+    margin: 1rem;
+    border: 2px solid #999;
+    background-color: #65a5fa;
+}
+
+/* #resume::after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+    *zoom: 1;
+} */
+
+.resume-title {
+    width: 210px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    background-color: #65a5fa;
+}
+
+.resume-content {
+    float: right;
+    padding-left: 1rem;
+    background-color: #fff;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+    padding-top: 100%;
+}
+
+/* 清除浮动 */
+.clearfix {
+    clear: both;
+}
+
+.basic-title,
+.contact-title,
+.skill-title,
+.edu-title,
+.pro-title {
+    margin: 1rem 0;
+}
+
+.content-basic-info  li,
+.content-contact-info  li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.content-basic-info  li > .basic,
+.content-contact-info  li > .contact {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #666;
+}
+
+.content-basic-info  li > .info,
+.content-contact-info  li > .info {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #999
+}
+
+.ben,
+.com,
+.yan,
+.tec,
+.vue,
+.react {
+    padding: .5rem 0;
+}
+
+.indent {
+    text-indent: 1rem;
+}
