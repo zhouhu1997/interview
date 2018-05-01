@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .lay_1 {
+            width: 100%;
+            height: 300px;
+            line-height: 300px;
+            font-size: 0;
+            color: #fff;
+        }
+
+        .lay_1-left,
+        .lay_1-right {
+            height: 100%;
+            font-size: 16px;
+            text-align: center;            
+        }
+
+        .lay_1-left {
+            background-color: #656a5a;
+        }
+
+        .lay_1-right {
+            background-color: #7930aa;
+        }
+        /** 方法 一  
+          * width 百分比 
+          * 双行内
+        */
+        /* .lay_1-left, 
+        .lay_1-right {
+            display: inline-block;
+        }
+
+        .lay_1-left {
+            width: 30%;
+        }
+
+        .lay_1-right {
+            width: 70%;
+        } */
+
+
+        /* 方法 二 flex 布局 */
+        /* .lay_1-left {
+            flex: 0.3;
+        }
+
+        .lay_1-right {
+            flex: 0.7;
+        } */
+
+        /** 方法 三 
+          * width 百分比 
+          * 双浮动  
+        */
+        /* .lay_1-left {
+            width: 30%;
+            float: left;
+        }
+
+        .lay_1-right {
+            width: 70%;
+            float: right;
+        } */
+
+        /** 方法 四 
+          * width 百分比 
+          * 双绝对定位  
+        */
+        /* .lay_1 {
+            position: relative;
+        }
+
+        .lay_1-left,
+        .lay_1-right {
+            position: absolute;
+            top: 0;
+        }
+        
+        .lay_1-left {
+            left: 0;
+            width: 30%;
+        }
+
+        .lay_1-right {
+            right: 0;
+            width: 70%;
+        } */
+
+        /** 方法 五 
+          * width 百分比 
+          * 绝对定位 + margin 
+        */
+        /* .lay_1 {
+            position: relative;
+        }
+
+        .lay_1-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30%;
+        }
+
+        .lay_1-right {
+            margin-left: 30%;
+            width: 70%;
+        } */
+
+        /** 方法 六
+          * width 百分比 
+          * 浮动 + margin  
+        */
+        /* .lay_1-left {
+            width: 30%;
+            float: left;
+        }
+
+        .lay_1-right {
+            width: 70%;
+            margin-left: 30%;
+        } */
+
+        /** 方法七
+          * 定位 + inline-block
+        */
+        /* .lay_1 {
+            position: relative;
+        }
+
+        .lay_1-left {
+            display: inline-block;
+            width: 30%;
+        }
+
+        .lay_1-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 30%;
+        } */
+
+        /** 方法八
+          * 定位 + 浮动
+        */
+        /* .lay_1 {
+            position: relative;
+        }
+
+        .lay_1-left {
+            width: 30%;
+            float: left;
+        }
+
+        .lay_1-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 30% ;
+        } */
+
+        /** 方法九
+          * 浮动 + ibline-block
+        */
+        /* .lay_1-left {
+            float: left;
+            width: 30%;
+        }
+
+        .lay_1-right {
+            display: inline-block;
+            width: 70%;
+        } */
+
+        /** 方法十
+          * grid布局
+        */
+        .lay_1 {
+            display: grid;
+            grid-template-columns: 30% 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <!-- 实现一个两栏布局，左侧占30%宽度，右侧占70%宽度 -->
+        <div class="lay_1">
+            <div class="lay_1-left">左边宽度30%</div>
+            <div class="lay_1-right">右边宽度70%</div>
+        </div>
+    </div>
+</body>
+</html>

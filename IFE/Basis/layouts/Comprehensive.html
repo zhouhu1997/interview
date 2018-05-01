@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第七天到第八天，学习布局</title>
+    <style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			color: #d9dce2;
+			/* text-decoration: none; */
+		}
+
+		.nav {
+			height: 56px;
+			line-height: 56px;
+			padding: 0 10%;
+			color: #d9dce2;
+			background-color: #333;
+		}
+
+		.nav-title {
+			display: inline-block;
+		}
+
+		.nav-content {
+			display: inline-block;
+			float: right;
+		}
+
+		.header {
+			position: relative;
+			width: 100%;
+			height: 300px;
+			font-size: 0;
+			background-color: #66bb33;
+		}
+
+		.header-nav {
+			position: absolute;
+			right: 10%;
+			bottom: 32px;
+		}
+
+		.nav-list {
+			display: inline-block;
+			font-size: 16px;
+			padding: 12px;
+			margin: 0 12px;
+			border: 1px solid rgba(7, 17, 27, 0.5);
+			background-color: #e0f1d6;
+		}
+
+		.nav-list-active {
+			padding: 20px 12px 12px 12px;
+			background-color: #fff;
+		}
+
+		.content {
+			width: 100%;
+			font-size: 0;
+			margin: 2rem 0 3rem 0;
+			background-color: #fff;
+		}
+		
+		.content-top {
+			font-size: 0;
+			padding-left: 10%;
+			border-bottom: 1px solid #999;
+		}
+
+		.top-item {
+			display: inline-block;
+			position: relative;
+			font-size: 16px;
+			padding: 1rem 2rem;
+			border: 1px solid #999;
+			border-bottom: none;
+			border-radius: 12px 12px 0 0;
+		}
+
+		/* 遮罩层，遮住父元素的 border-bottom */
+		.layer {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 2.6777rem;
+			bottom: -2px;
+			background-color: #fff;
+		}
+
+		/* grid布局 */
+		.content-grid {
+			display: grid;
+			width: 80%;
+			font-size: 16px;
+			text-align: center;
+			margin: 1rem auto 0;
+			grid-template-columns: auto auto auto auto auto auto auto auto auto ;
+			grid-template-rows: 200px 300px 150px;
+			grid-column-gap: 1rem;
+			grid-row-gap: 1rem;
+		}
+
+		.grid-item {
+			border: 1px solid rgba(7, 17, 27, 0.5);			
+		}
+
+		.grid-item-1,
+		.grid-item-8 {
+			grid-column: 1 / 5;
+		}
+
+		.grid-item-2,
+		.grid-item-9 {
+			grid-column: 5 / 9;
+		}
+
+		.grid-item-3,
+		.grid-item-10 {
+			grid-column: 9 / 13;
+		}
+
+		.grid-item-4 {
+			grid-column: 1 / 4;
+		}
+		.grid-item-5 {
+			grid-column: 4 / 7;
+		}
+		.grid-item-6 {
+			grid-column: 7 / 10;
+		}
+		.grid-item-7 {
+			grid-column: 10 / 13;
+		}
+
+		/* 行内写法 */
+		/* .content-grid {
+			width: 80%;
+			font-size: 16px;
+			text-align: center;
+			margin: 1rem auto 0;
+		}
+
+		.grid-item {
+			margin: .75rem 0;
+			border: 1px solid rgba(7, 17, 27, 0.5);			
+		}
+
+		.grid-item-1,
+		.grid-item-2,
+		.grid-item-3,
+		.grid-item-8,
+		.grid-item-9,
+		.grid-item-10 {
+			display: inline-block;
+			width: 31%;
+			height: 150px;
+			line-height: 150px;
+		}
+
+		.grid-item-4,
+		.grid-item-5,
+		.grid-item-6,
+		.grid-item-7 {
+			display: inline-block;
+			width: 23%;
+			height: 200px;
+			line-height: 200px;
+		} */
+
+		.footer {
+			height: 120px;
+			line-height: 120px;
+			text-align: center;
+			color: #eee;
+			background-color: #666;
+		}
+    </style>
+</head>
+<body>
+    <div id="page">
+		<div class="nav">
+			<h2 class="nav-title">
+				LoGo
+			</h2>
+			<div class="nav-content">
+				<a href="">GitHub</a>
+				<a href="">Register</a>
+				<a href="">Login</a>
+			</div>
+		</div>
+		<div class="header">
+			<ul class="header-nav"> 
+				<li class="nav-list">1</li>
+				<li class="nav-list nav-list-active">2</li>
+				<li class="nav-list">3</li>
+				<li class="nav-list">4</li>
+			</ul>
+		</div>
+		<div class="content">
+			<ul class="content-top">
+				<li class="top-item">Home<div class="layer"></div> </li>
+				<li class="top-item">Profile</li>
+				<li class="top-item">About</li>
+			</ul>
+			<div class="content-grid">
+				<div class="grid-item grid-item-1">Content 1</div>
+				<div class="grid-item grid-item-2">Content 2</div>
+				<div class="grid-item grid-item-3">Content 3</div>
+				<div class="grid-item grid-item-4">Content 4</div>
+				<div class="grid-item grid-item-5">Content 5</div>
+				<div class="grid-item grid-item-6">Content 6</div>
+				<div class="grid-item grid-item-7">Content 7</div>
+				<div class="grid-item grid-item-8">Content 8</div>
+				<div class="grid-item grid-item-9">Content 9</div>
+				<div class="grid-item grid-item-10">Content 10</div>
+			</div>
+		</div>
+		<div class="footer">
+			©&nbsp;2018&nbsp;&nbsp;ife.baidu.com
+		</div>
+	</div>
+</body>
+</html>

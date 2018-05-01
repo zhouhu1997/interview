@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 li {
@@ -32,6 +33,11 @@ input {
 
 .resume-title {
     margin: 1rem 0;
+}
+
+
+.resume-content {
+    padding-bottom: 1rem;
 }
 
 .basic-title,

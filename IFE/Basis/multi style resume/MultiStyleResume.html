@@ -91,9 +91,11 @@
     </div>
 </body>
 <script>
-    let changeStyle = document.getElementById("changeStyle");
-    function toggleStyle (num)  {
-        changeStyle.href = `./style_${num}.css`;
+    window.onload = () => {
+        let changeStyle = document.getElementById("changeStyle");
+        toggleStyle = (num) => {
+            changeStyle.href = `./style_${num}.css`;
+        }
     }
 </script>
 </html>

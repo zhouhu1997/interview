@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 基本代码 */
+        .lay_2 {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            line-height: 300px;
+            font-size: 0;
+            /* text-align: center; */
+            color: #fff;
+            box-sizing: content-box;
+        }
+
+        .lay_2-left,
+        .lay_2-right {
+            height: 100%;
+            font-size: 16px;
+            box-sizing:border-box;
+            text-align: center;
+        }
+        
+        .lay_2-left {
+            width: 300px;
+            background-color: indianred;
+        }
+
+        .lay_2-right {
+            background-color: gold;
+        }
+
+        /** 方法 一 
+          * 双 inline-block
+        */
+        /* .lay_2-left,
+        .lay_2-right {
+            display: inline-block;
+        }
+
+        .lay_2-right {
+            width: calc(100% - 300px);
+        } */
+
+        /** 方法二
+          * 双浮动
+        */
+        /* .lay_2-left,
+        .lay_2-right {
+            float: left;
+        }
+
+        .lay_2-right {
+            width: calc(100% - 300px);
+        } */
+
+        /** 方法三 
+          * 双定位
+        */
+        /* .lay_2 {
+            position: relative;
+        }
+    
+        .lay_2-left,
+        .lay_2-right {
+            position: absolute;
+        }
+
+        .lay_2-right {
+            left: 300px;
+            right: 0;
+        } */
+
+        /** 方法四
+          * 浮动 + 定位
+        */
+        /* .lay_2 {
+            position: relative;
+        } */
+        /* 左浮动 右定位 */
+
+        /*.lay_2-left {
+            float: left;
+        }
+
+        .lay_2-right {
+            position: absolute;
+            left: 300px;
+            right: 0;
+        } */
+        
+        /* 右浮动 左定位 */
+        /* .lay_2-left {
+            position: absolute;
+            left: 0;
+        }
+
+        .lay_2-right {
+            width: calc(100% - 300px);
+            float: right;
+        } */
+
+        /** 方法五 
+          * 浮动 + margin
+        */
+        /* 左浮动 右margin */
+        /* .lay_2-left {
+            float: left;
+        }
+
+        .lay_2-right {
+            margin-left: 300px;
+        } */
+        /** 右浮动 左margin
+          * 不可实现
+          * 需要将.right设为inline-block  
+        */
+
+        /** 方法六
+          * margin + 定位
+        */
+        /* 左定位 右margin */
+        /* .lay_2 {
+            position: relative;
+        }
+        
+        .lay_2-left {
+            position: absolute;
+            left: 0;
+        }
+
+        .lay_2-right {
+            margin-left: 300px;
+        } */
+
+        /** 方法七
+          * inline-block + 浮动
+        */
+        /* 左浮动 右inline-block */
+        /* .lay_2-left {
+            float: left;
+        }
+
+        .lay_2-right {
+            display: inline-block;
+            width: calc(100% - 300px);
+        } */
+
+        /* 右浮动 左inline-block */
+        /* .lay_2-left {
+            display: inline-block;
+        }
+
+        .lay_2-right {
+            float: right;
+            width: calc(100% - 300px);
+        } */
+
+        /** 方法八
+          * inline-block + 定位
+        */
+        /* .lay_2 {
+            position: relative;
+        }
+
+        .lay_2-left {
+            display: inline-block;
+        }
+
+        .lay_2-right {
+            position: absolute;
+            top: 0;
+            left: 300px;
+            right: 0;
+        } */
+
+        /** 方法九
+          * flex布局
+        */
+        /* .lay_2 {
+            display: flex;
+        }
+
+        .lay_2-left {
+            flex: 0 0 auto;
+        }
+
+        .lay_2-right {
+            flex: 300px;
+        } */
+
+        /** 方法十
+          * grid 布局
+        */
+        .lay_2 {
+            display: grid;
+            grid-template-columns: 300px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <!-- 实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化 -->
+        <div class="lay_2">
+            <div class="lay_2-left">左边固定宽</div>
+            <div class="lay_2-right">右边自适应宽</div>
+        </div>
+    </div>
+</body>
+</html>
