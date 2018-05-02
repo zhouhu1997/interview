@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化</title>
+    <link rel="stylesheet" href="ThreeColumn.css">
+    <style>
+        /* 方法一，方法二，方法六原理: 计算 .right 宽度，可以看成同一方法 */
+        .left {
+            width: 200px;
+        }
+    
+        .middle {
+            width: 150px;
+        }
+        /** 方法一
+          * 浮动
+        */
+        /* .container {
+            overflow: hidden;
+        }
+
+        .right {
+            width: calc(100% - 350px);
+        }
+        
+        .left,
+        .middle,
+        .right {
+            float: left;
+        } */
+
+        /** 方法二
+          * inline-block + width
+        */
+        /* .left,
+        .middle,
+        .right {
+            display: inline-block;
+            font-size: 24px;
+        }
+
+        .right {
+            width: calc(100% - 350px);
+        } */
+
+        /** 方法三
+          * 定位
+        */
+        /* .container {
+            position: relative;
+            height: 400px;
+        }
+
+        .left {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .middle {
+            position: absolute;
+            left: 200px;
+            top: 0;
+        }
+
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: calc(100% - 350px);
+        } */
+
+        /** 方法四
+          * flex布局
+        */
+        /* .container {
+            display: flex;
+        }
+
+        .right {
+            flex: auto;
+        } */
+
+        /** 方法五
+          * grid布局
+        */
+        .container {
+            display: grid;
+            grid-template-columns: 200px 150px auto;
+        }
+
+        /** 方法六
+          * 浮动 + inline-block + width
+        */
+        /* .left,
+        .middle {
+            display: inline-block;
+            font-size: 24px;
+        }
+
+        .right {
+            float: right;
+            width: calc(100% - 350px);
+        } */
+        /** 方法七 
+          * 定位 + inline-block
+        */
+        .container {
+            position: relative;
+        }
+
+        .left,
+        .middle {
+            display: inline-block;
+        }
+
+        .right {
+            position: absolute;
+            top: 0;
+            left: 350px;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">顶部</div>
+    <div class="container">
+        <div class="left">左边固定宽</div> 
+        <div class="middle">中间固定宽</div> 
+        <div class="right">右边自适应宽</div>
+    </div>
+    <div class="footer">底部</div>
+</body>
+</html>

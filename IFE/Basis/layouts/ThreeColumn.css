@@ -1,0 +1,40 @@
+/* 三栏布局基础样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-width: 550px;
+    line-height: 400px;
+    font-size: 0;
+}
+
+.left,
+.middle,
+.right {
+    height: 400px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.left {
+    background-color: darkgrey;
+}
+
+.middle {
+    background-color: darksalmon;
+}
+
+.right {
+    background-color: darkseagreen;
+}
+
+.header,
+.footer {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    background-color: paleturquoise;
+}

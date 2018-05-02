@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</title>
+    <link rel="stylesheet" href="ThreeColumn.css">
+    <style>
+        .left {
+            width: 200px;
+        }
+
+        .right {
+            width: 150px;
+        }
+        /** 方法一
+          * 定位 + margin
+        */
+        /* .container {
+            position: relative;
+        }
+        
+        .left {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .middle {
+            margin-left: 200px;
+            margin-right: 150px;
+        } */
+
+        /** 方法二
+          * 浮动
+        */
+        /* .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }	
+
+        .middle {
+            float: left;
+            width: calc(100% - 350px);
+        } */
+
+        /** 方法三 
+          * inline-block + width
+        */
+        /* .left,
+        .middle,
+        .right {
+            display: inline-block;
+        }
+
+        .middle {
+            width: calc(100% - 350px);
+        } */
+
+        /** 方法四
+          * flex布局  
+        */
+        /* .container {
+            display: flex;
+        }
+
+        .middle {
+            flex: auto;
+        } */
+
+        /** 方法五
+          * grid 布局
+        */
+        .container {
+            display: grid;
+            grid-template-columns: 200px auto 150px;
+        }
+
+        /** 方法六
+          * 圣杯,见 HolyGrail.html
+        */
+
+        /** 方法七
+          * 双飞翼, 见DoubleFlyingWing.html
+        */
+    </style>
+</head>
+<body>
+    <div class="header">顶部</div>
+    <div class="container">
+        <div class="left">左边固定宽</div> 
+        <div class="middle">中间宽</div> 
+        <div class="right">右边固定宽</div>
+    </div>
+    <div class="footer">底部</div>
+</body>
+</html>
