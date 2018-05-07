@@ -1,42 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-li {
-    list-style: none;
-}
-
 h5,
 p {
     display: inline;
 }
 
-input {
-    padding: .5rem 1rem;
-    border-radius: 3px;
-    color: rgba(7, 17, 27, 0.5);
-}
-
-#toggleBtns {
-    margin-left: 1rem;
-}
-
-.toggleBtns-title {
-    font-size: 3rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-}
-
-#resume {
-    width: 900px;
-    margin: 1rem;
-    border: 2px solid #999;
-}
-
 .resume-title {
-    /* margin: 1rem 0; */
     padding-left: 1rem;
     height: 90px;
     line-height: 90px;
@@ -48,19 +15,11 @@ input {
     clear: both;
 }
 
-.content-basic-info,
-.content-contact-info,
-.content-skill-desc,
-.content-edu-exper,
-.content-pro-exp {
+.content-after {
     border-bottom: 2px solid #efefef;
 }
 
-.content-basic-info::after,
-.content-contact-info::after,
-.content-skill-desc::after,
-.content-edu-exper::after,
-.content-pro-exp::after {
+.content-after::after {
     display: block;
     clear: both;
     content: "";
@@ -69,11 +28,7 @@ input {
     *zoom: 1;
 }
 
-.basic-title,
-.contact-title,
-.skill-title,
-.edu-title,
-.pro-title {
+.title {
     width: 120px;
     height: 90px;
     line-height: 90px;
@@ -83,35 +38,7 @@ input {
     border-bottom: 1px solid #eaeaea;
 }
 
-.content-basic-info li,
-.content-contact-info li {
-    display: inline-block;
-    margin-right: 1rem;
-}
-
-.content-basic-info li > .basic,
-.content-contact-info li > .contact {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #666;
-}
-
-.content-basic-info li > .info,
-.content-contact-info li > .info {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: #999
-}
-
-.ben,
-.com,
-.yan,
-.tec,
 .vue,
 .react {
-    padding: .5rem 0;
-}
-
-.indent {
-    text-indent: 1rem;
+    display: inline;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>第五天和第六天 三种简历</title>
+    <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="style_1.css"> -->
     <!-- <link rel="stylesheet" href="style_2.css"> -->
     <link rel="stylesheet" href="style_3.css" id="changeStyle">
@@ -18,13 +19,13 @@
     </div>
     <div id="resume">
         <div class="resume-title">
-            <h2 class="title">
+            <h2 class="main-title">
                 简历
             </h2>
         </div>
         <div class="resume-content">
-            <div class="content-basic-info">
-                <h3 class="basic-title">基本信息</h3>
+            <div class="content-after content-basic-info">
+                <h3 class="title basic-title">基本信息</h3>
                 <li class="indent">
                     <span class="basic">姓名&nbsp;&nbsp;</span>
                     <span class="info">张三</span>
@@ -38,8 +39,8 @@
                     <span class="info">WEB前端工程师</span>
                 </li>
             </div>
-            <div class="content-contact-info">
-                <h3 class="contact-title">联系方式</h3>
+            <div class="content-after content-contact-info">
+                <h3 class="title contact-title">联系方式</h3>
                 <li class="indent">
                     <span class="contact">手机&nbsp;&nbsp;</span>
                     <span class="info">1357671****</span>
@@ -53,8 +54,8 @@
                     <a class="info" href="https://github.com/Feafortecsy">Github</a>
                 </li>
             </div>
-            <div class="content-skill-desc">
-                <h3 class="skill-title">能力描述</h3>
+            <div class="content-after content-skill-desc">
+                <h3 class="title skill-title">能力描述</h3>
                 <li class="indent">
                     <h5 class="tec">技术能力&nbsp;&nbsp;</h5>
                     <p>熟练掌握HTML，CSS，JavaScript</p>
@@ -64,8 +65,8 @@
                     <p>良好的沟通，主动积极，努力勤奋</p>
                 </li>
             </div>
-            <div class="content-edu-exper">
-                <h3 class="edu-title">教育经历</h3>
+            <div class="content-after content-edu-exper">
+                <h3 class="title edu-title">教育经历</h3>
                 <li class="indent">
                     <h5 class="ben">本科&nbsp;&nbsp;</h5>
                     <p>百度前端初级学院</p>
@@ -75,14 +76,14 @@
                     <p>百度前端中级学院</p>
                 </li>
             </div>
-            <div class="content-pro-exp">
-                <h3 class="pro-title">项目经历</h3>
+            <div class="content-after content-pro-exp">
+                <h3 class="title pro-title">项目经历</h3>
                 <li class="indent">
-                    <h5 class="vue">Vue&nbsp;&nbsp;</h5>
+                    <a href="https://github.com/Feafortecsy/Vue/tree/master/Fashion-Music" class="vue">Vue&nbsp;&nbsp;</a>
                     <p>歌手排行，音乐播放，播放记录，喜欢列表，搜索</p>
                 </li>
                 <li class="indent">
-                    <h5 class="react">React&nbsp;&nbsp;</h5>
+                    <a href="https://github.com/Feafortecsy/React/tree/master/book-mall" class="react">React&nbsp;&nbsp;</a>
                     <p>排行榜，阅读，夜间、护眼、默认，搜索</p>
                 </li>
             </div>
@@ -99,3 +100,9 @@
     }
 </script>
 </html>
+let resultConversion = document.getElementById("result-conversion");
+
+<input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+<input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+<button id="trans-btn">转化为二进制</button>
+<p id="result-conversion">运算结果</p>

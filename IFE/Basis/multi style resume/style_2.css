@@ -1,27 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-li {
-    list-style: none;
-}
-
 /* .resume-title高度与父元素 即#resume 一样 */
 body,
 html {
     height: 100%;
-}
-
-input {
-    padding: .5rem 1rem;
-    border-radius: 3px;
-    color: rgba(7, 17, 27, 0.5);
-}
-
-#toggleBtns {
-    margin-left: 1rem;
 }
 
 .toggleBtns-title {
@@ -31,11 +11,7 @@ input {
 }
 
 #resume {
-    width: 900px;
     height: 100%;
-    margin: 1rem;
-    border: 2px solid #999;
-    /* background-color: #65a5fa; */
 }
 
 /* #resume::after {
@@ -62,7 +38,7 @@ input {
     background-color: #fff;
 }
 
-.title {
+.main-title {
     font-size: 3rem;
     font-weight: 300;
     color: #fff;
@@ -74,43 +50,6 @@ input {
     clear: both;
 }
 
-.basic-title,
-.contact-title,
-.skill-title,
-.edu-title,
-.pro-title {
+.title {
     margin: 1rem 0;
-}
-
-.content-basic-info  li,
-.content-contact-info  li {
-    display: inline-block;
-    margin-right: 1rem;
-}
-
-.content-basic-info  li > .basic,
-.content-contact-info  li > .contact {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #666;
-}
-
-.content-basic-info  li > .info,
-.content-contact-info  li > .info {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: #999
-}
-
-.ben,
-.com,
-.yan,
-.tec,
-.vue,
-.react {
-    padding: .5rem 0;
-}
-
-.indent {
-    text-indent: 1rem;
 }

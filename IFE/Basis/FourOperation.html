@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四则运算和进制转换</title>
+</head>
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result-operation">运算结果</p>
+    <script>
+        window.onload = () => {
+            let addBtn = document.getElementById("add-btn");
+            let minusBtn = document.getElementById("minus-btn");
+            let timesBtn = document.getElementById("times-btn");
+            let divideBtn = document.getElementById("divide-btn");
+            let resultOperation = document.getElementById("result-peration");
+            let resultText = "运算结果:&nbsp;&nbsp;&nbsp;";
+
+            Operation = (type) => {
+                // 将 输入框 中的 字符转换成 数字
+                let numberX = parseInt(document.getElementById("first-number").value);
+                let numberY = parseInt(document.getElementById("second-number").value);
+                let operationResult = 0
+                // 判断运算类型, 使用break 跳出 判断 并返回结果
+                switch(type) {
+                    case 'add':
+                        operationResult = numberX + numberY;
+                        break;
+                    case 'minus':
+                        operationResult = numberX - numberY;
+                        break;
+                    case 'times':
+                        operationResult = numberX * numberY;
+                        break;
+                    case 'divide':
+                        if (numberY === 0) {
+                            alert("除数不能为0");
+                        } else {
+                            operationResult = numberX / numberY;
+                        }
+                        break;
+                    default:
+                        operationResult = 0;
+                        break;
+                }
+                return operationResult
+            }   
+
+            addBtn.onclick = () => {
+                // 将结果保存到 结果标签
+                resultLabel.innerHTML = resultText + Operation('add');
+            }
+
+            minusBtn.onclick = () => {
+                resultLabel.innerHTML = resultText + Operation('minus');
+            }
+
+            timesBtn.onclick = () => {
+                resultLabel.innerHTML = resultText + Operation('times');
+            }
+
+            divideBtn.onclick = () => {
+                resultLabel.innerHTML = resultText + Operation('divide');
+            }
+        }
+    </script>
+</body>
+</html>
