@@ -16,12 +16,23 @@
     <p id="result-operation">运算结果</p>
     <script>
         window.onload = () => {
-            let addBtn = document.getElementById("add-btn");
-            let minusBtn = document.getElementById("minus-btn");
-            let timesBtn = document.getElementById("times-btn");
-            let divideBtn = document.getElementById("divide-btn");
-            let resultOperation = document.getElementById("result-peration");
-            let resultText = "运算结果:&nbsp;&nbsp;&nbsp;";
+            // 加
+            const addBtn = document.getElementById("add-btn");
+            // 减
+            const minusBtn = document.getElementById("minus-btn");
+            // 乘
+            const timesBtn = document.getElementById("times-btn");
+            // 除 
+            const divideBtn = document.getElementById("divide-btn");
+            // 十 => 二
+            const transBtn = document.getElementById("trans-btn");
+            // 转换结果位数
+            const binBtn = document.getElementById("bin-bit");
+            // 四则运算结果
+            const resultOperation = document.getElementById("result-operation");
+            // 进制转换结果
+            const resultConversion = document.getElementById("result-conversion");
+            const resultText = "运算结果:&nbsp;&nbsp;&nbsp;";
 
             Operation = (type) => {
                 // 将 输入框 中的 字符转换成 数字
@@ -50,24 +61,24 @@
                         operationResult = 0;
                         break;
                 }
-                return operationResult
+                return operationResult;
             }   
 
             addBtn.onclick = () => {
                 // 将结果保存到 结果标签
-                resultLabel.innerHTML = resultText + Operation('add');
+                resultOperation.innerHTML = resultText + Operation('add');
             }
 
             minusBtn.onclick = () => {
-                resultLabel.innerHTML = resultText + Operation('minus');
+                resultOperation.innerHTML = resultText + Operation('minus');
             }
 
             timesBtn.onclick = () => {
-                resultLabel.innerHTML = resultText + Operation('times');
+                resultOperation.innerHTML = resultText + Operation('times');
             }
 
             divideBtn.onclick = () => {
-                resultLabel.innerHTML = resultText + Operation('divide');
+                resultOperation.innerHTML = resultText + Operation('divide');
             }
         }
     </script>
