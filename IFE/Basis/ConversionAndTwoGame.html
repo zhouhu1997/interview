@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result-conversion">运算结果</p>
+</body>
+
+<script>
+    window.onload = () => {
+        // 十 => 二
+        const transBtn = document.getElementById("trans-btn");
+        // 转换结果位数
+        const binBtn = document.getElementById("bin-bit");
+        // 进制转换结果
+        const resultConversion = document.getElementById("result-conversion");
+        const resultText = "运算结果:&nbsp;&nbsp;&nbsp;";
+        // 整数和小数的整数部分转换
+        ConversionInteger = (integer) => {
+            // 余数
+            let remainder = 0;
+            // 整数的转换结果
+            let resultInteger = '';
+            do {
+                remainder = integer % 2;
+                integer = parseInt(integer / 2);
+                resultInteger += remainder.toString();
+                // debugger;
+            }
+            while (integer > 1);
+            if (integer === 1) {
+                resultInteger += '1';
+            }
+            resultInteger = resultInteger.toString().split('').reverse().join('');
+            return resultInteger
+        }
+
+        // 转换小数
+        ConversionDecimal = (decimal) => {
+            let resultDecimal = '';
+            // 整数部分
+            let integer = decimal.toString().split('.')[0];
+            let Integer = ConversionInteger(integer);
+            let a = decimal.toString().split('.')[1];
+            let b = Math.pow(10, decimal.toString().split('.')[1].length);
+            let i = 0;
+            // decimal = decimal.toString().split('.')[1] / Math.pow(10, decimal.toString().split('.')[1].length);
+            decimal = a / b;
+            do {
+                product = decimal * 2;
+                remainder = product.toString().split('.')[0];
+                decimal = product.toString().split('.')[1] / Math.pow(10, product.toString().split('.')[1].length);
+                resultDecimal += remainder.toString();
+                i = i + 1;
+            }
+            while (i < 10);
+            resultDecimal = Integer.toString() + '.' + resultDecimal;
+            return resultDecimal
+        }
+
+        complementPosition = (num, result) => {
+            let zeroNum = '';
+            if (num > 0) {
+                for (let i = 0; i < num; i++) {
+                    zeroNum = zeroNum + '0';
+                }
+                result = zeroNum + result;
+            }
+            return result
+        }
+
+        Verification = (num) => {
+            let a = num.indexOf('.');
+            let isInteger
+            if (a === -1) {
+                isInteger = true;
+            } else if (a < num.length) {
+                isInteger = false;
+            } else {
+                isInteger = null
+            }
+            return isInteger
+        }
+
+        transBtn.onclick = () => {
+            // 需要转换 的 值
+            let decNumber = document.getElementById("dec-number").value;
+            // 转换后的结果
+            let result = null;
+            // 判断 输入 的 数据 是整数还是小数
+            let isInteger = Verification(decNumber);
+            if (isInteger === true) {
+                result = ConversionInteger(decNumber);
+            } else if (isInteger === false) {
+                result = ConversionDecimal(decNumber);
+            } else {
+                console.log("输入错误")
+            }
+            // 转换结果需要显示的位数
+            let binBit = parseInt(binBtn.value);
+            let resultLength = result.toString().length;
+            if (binBit < resultLength) {
+                console.log("第二个值输入不合理");
+            }
+            if (!binBit || !decNumber) {
+                alert("输入不合理");
+                return
+            }
+            // 补位的位数
+            let zeroNumber = binBit - resultLength;
+            resultLength <= binBit ? '' : console.log("第二个值输入不合理");
+            // 结果标签显示的值
+            resultConversion.innerHTML = resultText + complementPosition(zeroNumber, result);
+        }
+
+        // 输出 。。。 和 PA
+        for (let i = 1; i <= 100; i++) {
+            let t = i.toString().split('')
+            t = t.indexOf('3');
+            if (i % 3 === 0) {
+                console.log("PA");
+            }  else if (t !== -1) {
+                console.log("PA");
+            } else {
+                console.log(i);
+            }
+        }
+    }
+</script>
+
+</html>
