@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第十九天：找到那个DOM</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="news-top" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li>
+                        <span>HTML</span>
+                        <a href="">Some Link1</a>
+                    </li>
+                    <li>
+                        <span>JS</span>
+                        <a class="active" href="">Some Link2</a>
+                    </li>
+                    <li>
+                        <span>CSS</span>
+                        <a href="">Some Link3</a>
+                    </li>
+                    <li>
+                        <span>JS</span>
+                        <a href="">Some Link4</a>
+                    </li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+        <div id="news-normal" class="section">
+            <h3>Some title</h3>
+            <div class="content">
+                <ul>
+                    <li>
+                        <span>HTML</span>
+                        <a href="">Some Link1</a>
+                    </li>
+                    <li>
+                        <span>HTML</span>
+                        <a href="">Some Link2</a>
+                    </li>
+                    <li>
+                        <span>JS</span>
+                        <a class="active" href="#">Some Link3</a>
+                    </li>
+                    <li>
+                        <span>CSS</span>
+                        <a href="">Some Link4</a>
+                    </li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+    </div>
+    <script>
+        function getAllListItem () {
+            // 返回页面中所有li标签
+            let $li = document.getElementsByTagName("li");
+            console.log($li);
+        }
+
+        function findAllHtmlSpanInOneSection (sectionId) {
+            // 返回某个section下所有span中内容为HTML的span标签
+            let $newsTop = document.getElementById(sectionId);
+            let $li = $newsTop.getElementsByTagName("li");
+            for (let i = 0; i < $li.length; i++) {
+                let result = $li[i].children[0]
+                if (result.innerHTML === "HTML") {
+                    console.log(result.parentNode);
+                }
+                return result 
+            }
+        }
+
+        // function findListItem (sectionId, spanCont) {
+        //     // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        //     let $newsTop = document.getElementById(sectionId);
+        //     let $li = $newsTop.getElementsByTagName("li");
+        //     for (let i = 0; i < $li.length; i++) {
+        //         let result = $li[i].children[0]
+        //         if (result.innerHTML === "HTML") {
+        //             console.log(result.parentNode);
+        //         }
+        //         return result 
+        //     }
+        // }
+
+        function getActiveLinkContent (sectionId) {
+            // 返回某个section下，class为active的链接中包含的文字内容 
+
+        }
+
+        // getAllListItem();
+        // findAllHtmlSpanInOneSection("news-top");
+        // findAllHtmlSpanInOneSection("news-normal");
+        // findListItem("news-top", "HTML");
+        // findListItem("news-normal", "CSS");
+
+        // 使用  querySelectorAll
+
+
+        // function getAllListItem () {
+        //     // 返回页面中所有li标签
+        //     let $li = document.querySelectorAll("li");
+        //     console.log($li);
+        // }
+
+        // function findAllHtmlSpanInOneSection (sectionId, spanCont) {
+        //     // 返回某个section下所有span中内容为HTML的span标签
+        //     let $span = document.querySelectorAll(sectionId);
+        //     $span.forEach((item) => {
+        //         // console.log(item);
+        //         if (item.innerHTML === "HTML") {
+        //             console.log(item);
+        //         }
+        //     })
+        // }
+
+        function findListItem (sectionId, spanCont) {
+            // 返回某个section下，所有所包含span内容为spanCont的LI标签
+            let $newsTop = document.querySelectorAll(sectionId);
+            console.log($newsTop);
+            // for (let i = 0; i < $li.length; i++) {
+            //     if ($li[i].children[0].innerHTML === spanCont) {
+            //         console.log($li[i].children[0].parentNode);
+            //     }
+            // }
+        }
+
+        // getAllListItem();
+        // findAllHtmlSpanInOneSection("news-top");
+        // findAllHtmlSpanInOneSection("news-normal");
+        findListItem("#news-top", "HTML");
+        findListItem("#news-normal", "CSS");
+    </script>
+</body>
+
+</html>
